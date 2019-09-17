@@ -1,4 +1,10 @@
 // 863. All Nodes Distance K in Binary Tree
+/*
+BFS implementation over tree in O(N).
+distance from given nodes to all others nodes with level distance
+*/
+
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
