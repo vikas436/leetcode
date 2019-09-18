@@ -21,7 +21,7 @@ public:
             cnt++;
         }
         if(cnt!=k) {
-            cur=head;ptr=pre;
+            cur=head;
             while(cur!=NULL) {
                 next = cur->next;
                 cur->next=pre;
