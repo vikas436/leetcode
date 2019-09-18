@@ -1,0 +1,34 @@
+/*
+Given this linked list: 1->2->3->4->5
+
+For k = 2, you should return: 2->1->4->3->5
+
+For k = 3, you should return: 3->2->1->5->4
+*/
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        if(head==NULL || head->next==NULL) return head;
+        if(k==1) return head;
+        ListNode *cur=head,*next=NULL, *pre=NULL, *ptr=cur;
+        int cnt=0;
+        while(cur!=NULL && cnt<k) {
+            next = cur->next;
+            cur->next=pre;
+            pre=cur;
+            cur=next;
+            cnt++;
+        }
+        ptr->next = reverseKGroup(cur ,k);
+        return pre;
+    }
+};
