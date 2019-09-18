@@ -33,9 +33,9 @@ public:
     }
     bool isValidSudoku(vector<vector<char>>& board) {
         for(int i=0;i<board.size();i++) {
+            if(row(board, i)) return false;
+            if(col(board, i)) return false;
             for(int j=0;j<board[i].size();j++) {
-                if(row(board, i)) return false;
-                if(col(board, i)) return false;
                 if(i%3==0 && j%3==0 && box(board,i,j)) return false;
             }
         }
