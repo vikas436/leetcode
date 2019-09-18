@@ -1,6 +1,6 @@
 // 29. Divide Two Integers
 // TIMEOUT need to uer math&bit manipulation...
-
+//hint:- can use binary search as well while subtracting increase with 2 once reach limit go down and find possible nums.
 class Solution {
 public:
     int divide(int x, int y) {
